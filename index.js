@@ -5,8 +5,8 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 app.use(
   cors({
-    // origin: "https://samsujjoha.vercel.app",
-    origin: "http://localhost:5173",
+   origin: "https://samsujjoha.vercel.app",
+
     credentials: true,
   })
 );
