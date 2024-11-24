@@ -3,9 +3,12 @@ const app = express();
 const PORT = 3000;
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-app.use(cors({
-  
-}));
+app.use(
+  cors({
+    origin: "https://samsujjoha.vercel.app",
+    credentials: true,
+  })
+);
 app.use(express.json());
 require("dotenv").config();
 const transporter = nodemailer.createTransport({
