@@ -5,7 +5,7 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 app.use(
   cors({
-   origin: "https://samsujjoha.vercel.app",
+    origin: "https://samsujjoha.vercel.app",
 
     credentials: true,
   })
@@ -15,7 +15,7 @@ require("dotenv").config();
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
-  secure: false, 
+  secure: false,
   auth: {
     user: process.env.FROM_GMAIL,
     pass: process.env.PASSWORD,
@@ -36,8 +36,6 @@ app.post("/contactUs", async (req, res) => {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ status: 200 });
   } catch (error) {
-
-
     res.status(500).json({ status: 500 });
   }
 });
